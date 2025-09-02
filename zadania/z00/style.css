@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Comic Sans MS" , Geneva, Tahoma, sans-serif;
+color: green;
+    background-color: red;
+}
+header {
+    background-color: turquoise;
+    text-align: center;
+    padding: 1em;
+}
+section {
+    text-align: center;
+    padding: 1em;
+    margin: auto;
+}
+
+footer {
+    color: white;
+    background-color: black;
+    padding: 1em;
+    text-align: center;
+
+}
