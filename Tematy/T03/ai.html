@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!doctype html>
+        <html lang="pl">
+        <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Porównanie: Programowanie strukturalne vs obiektowe — Notatka</title>
+    <!-- Prism.js CDN for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <style>
+        body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;max-width:1000px;margin:36px auto;padding:0 18px;color:#111}
+        header{border-bottom:2px solid #eee;padding-bottom:12px;margin-bottom:18px}
+        h1{font-size:1.6rem;margin:0}
+        h2{margin-top:20px;color:#0b61a4}
+        p{line-height:1.5}
+        pre{background:#0b0b0b;padding:16px;border-radius:8px;overflow:auto}
+        code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono',monospace}
+        ul{margin-left:1.2rem}
+        .note{background:#fffbe6;border-left:4px solid #ffd24d;padding:10px;margin:12px 0;border-radius:4px}
+        .example-title{font-weight:600;margin-top:12px}
+        .button-row{display:flex;gap:8px;margin-top:12px}
+        .btn{background:#0b61a4;color:white;padding:8px 12px;border-radius:6px;text-decoration:none}
+    </style>
+</head>
+<body>
+<header>
+    <h1>Porównanie programowania strukturalnego i obiektowego — notatka</h1>
+    <p>Wersja z kolorowaniem składni (Prism.js). Przykłady kodu w C#, HTML i CSS są podświetlone.</p>
+</header>
+
+<section>
+    <h2>Przykład: abstrakcja (C#)</h2>
+    <div class="example-title">Klasa abstrakcyjna <code>Wielokat</code></div>
+    <pre><code class="language-csharp">abstract class Wielokat
+{
+    protected int[] boki;
+
+    public int IleBokow()
+    {
+        return boki.Length;
+    }
+
+    public int Obwod()
+    {
+        int obwod = 0;
+        foreach (int bok in boki)
+        {
+            obwod += bok;
+        }
+        return obwod;
+    }
+
+    public abstract int Pole();
+}
+    </code></pre>
+
+    <h2>Przykład: dziedziczenie (C#)</h2>
+    <div class="example-title">Klasa <code>Kwadrat</code> dziedzicząca po <code>Wielokat</code></div>
+    <pre><code class="language-csharp">class Kwadrat : Wielokat
+{
+    public Kwadrat(int a)
+    {
+        boki = new int[4];
+        boki[0] = boki[1] = boki[2] = boki[3] = a;
+    }
+
+    public override int Pole()
+    {
+        return boki[0] * boki[0];
+    }
+}
+    </code></pre>
+
+    <h2>Przykład: prosty HTML + CSS</h2>
+    <div class="example-title">Fragment strony</div>
+    <pre><code class="language-markup">&lt;!doctype html&gt;
+&lt;html lang="pl"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;Przykład&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Witaj&lt;/h1&gt;
+    &lt;p&gt;To jest przykładowy fragment&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+
+    <pre><code class="language-css">body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 16px;
+}
+h1 {
+  color: #0b61a4;
+}
+    </code></pre>
+
+    <div class="note">Jeśli chcesz inny motyw kolorów (ja użyłem Prism "tomorrow"), mogę zmienić na jasny motyw lub dodać więcej języków.</div>
+</section>
+
+<footer>
+    <p>Źródło: plik PDF "StrukturalnevsObiektowe.pdf" — wyciąg najważniejszych fragmentów z przykładowym kodem.</p>
+</footer>
+
+<!-- Optional: initialize Prism if needed (Prism auto-highlights on load) -->
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>
