@@ -137,9 +137,6 @@ header h1:hover, section h1:hover{animation: wiggle .4s ease-in-out}
     table th, table td{font-size:.95rem}
 }
 
-/* Ustaw echo tekstu dla nagłówków bez modyfikacji HTML:
-   JS nieużywalny tutaj, więc prosty trick — pierwszy h1 w headerze i każdy section h1 ma echo ustawione ręcznie przez CSS
-*/
 header h1{--echo: "Zadanie T02"}
 header h1::after{content: var(--echo)}
 section h1::after{content: "////"}
