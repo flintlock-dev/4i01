@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 65</title>
+</head>
+<body>
+<header>
+  <h1>Zadanie 65</h1>
+  <h2>Autor: Michał Knurowski</h2>
+  <hr>
+</header>
+
+<section>
+  <p>
+    Napisz program, który oblicza pierwiastki równania kwadratowego. Program dla danych A, B i C ma sprawdzać czy równanie jest kwadratowe, czy ma jeden czy dwa pierwiastki i czy ma rozwiązanie.
+  </p>
+</section>
+
+<section id="wynik"></section>
+
+<script>
+  let liczbaa = parseInt(prompt("Podaj A:"));
+  let liczbab = parseInt(prompt("Podaj B:"));
+  let liczbac = parseInt(prompt("Podaj C:"));
+  let wynik = document.getElementById("wynik");
+  let delta = (liczbab * liczbab) - 4 * liczbaa * liczbac;
+  let pierwiastek = Math.sqrt(delta);
+  let x1 = (liczbab * -1 + pierwiastek) / (liczbaa  * 2);
+  let x2 = (liczbab * -1 - pierwiastek) / (liczbaa  * 2);
+  document.write(` A = ${liczbaa} <br> B = ${liczbab} <br> C = ${liczbac} <br>
+  Postać równania f(x) = ${liczbaa}*x² + ${liczbab}*x + ${liczbac} <br> delta = ${delta} <br> pierwiastek z delty = ${pierwiastek} <br>   X1 = ${x1} X2 = ${x2}`);
+
+</script>
+
+</body>
+</html>

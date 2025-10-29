@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title> Zadanie 62 </title>
+</head>
+<body>
+<header>
+    <h1>Zadanie 62</h1>
+    <h2>Autor: Michał Knurowski</h2>
+    <hr>
+</header>
+<section>
+    <p>Napisz program, który dla podanej wartości wyświetla ocenę wyrażoną słownie według następującego klucza:
+        0 – nieklasyfikowany
+        1,2,3 – poprawny
+        4,5 – dobry
+        6 – wyróżniający.
+        Na pozostałe wartości reaguje wyświetleniem komunikatu: „niewłaściwa liczba”.</p>
+</section>
+<section id="wynik">
+    ...
+</section>
+<script>
+let Ocena = prompt('podaj ocene');
+
+if (Ocena == 6) {
+    alert("Celujący");
+}
+else if (Ocena == 5)
+{
+    alert("dobry");
+}
+else if (Ocena == 4) {
+    alert("dobry")
+}
+else if  (Ocena == 3) {
+    alert("poprawny")
+}
+else if  (Ocena == 2) {
+    alert("poprawny")
+}
+else if  (Ocena == 1) {
+    alert("poprawny")
+}
+
+else if  (Ocena == 0) {
+    alert("nieklasyfikowany")
+}
+
+else {
+    alert("podaj poprawną liczbe")
+}
+
+</script>
+</body>
+</html>

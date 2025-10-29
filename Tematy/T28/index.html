@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title> Zadanie T21a </title>
+</head>
+<body>
+<header>
+    <h1>Zadanie T21a z wykorzystaniem Break</h1>
+    <h2>Autor: Michał Knurowski</h2>
+    <hr>
+</header>
+<section>
+    <p>Napisz program w JavaScript, który:
+
+        Wczyta od użytkownika dodatnią liczbę całkowitą n za pomocą funkcji prompt.
+        Sprawdzi, czy wprowadzona wartość jest poprawna (dodatnia liczba całkowita).
+        Używając pętli for, wyświetli kwadraty liczb od 1 do n za pomocą document.write, każde w nowej linii.
+        Przykład działania programu:
+
+        Jeśli użytkownik wpisze 3, program wyświetli:
+        Kwadrat liczby 1 to: 1
+        Kwadrat liczby 2 to: 4
+        Kwadrat liczby 3 to: 9
+        Porady dla uczniów:
+
+        Wczytywanie danych:
+        Użyj prompt("Wiadomość"), aby wczytać dane od użytkownika. Wynik jest tekstem (stringiem).
+        Skorzystaj z parseInt(), aby zamienić tekst na liczbę całkowitą.
+        Sprawdź, czy liczba jest dodatnia i czy nie jest NaN za pomocą warunku if (isNaN(n) || n <= 0).
+        Pętla for:
+        Ustaw zmienną sterującą (np. i) od 1 i iteruj do n włącznie: for (let i = 1; i <= n; i++).
+        W każdej iteracji oblicz kwadrat liczby i (np. i * i).
+        Wyświetlanie wyników:
+        Użyj document.write() do wyświetlenia wyniku. Aby przejść do nowej linii, dodaj <br> na końcu tekstu, np. document.write("Wynik: " + wynik + "<br>").
+        Upewnij się, że tekst jest czytelny, np. "Kwadrat liczby X to: Y".
+        Testowanie:
+        Sprawdź program dla różnych danych wejściowych, np. 3, 0, -1, abc.
+        Jeśli dane są niepoprawne, wyświetl komunikat, np. "Proszę podać dodatnią liczbę całkowitą.".</p>
+    <br>
+</section>
+<section id="wynik">
+    ...
+</section>
+<Script>
+let n = prompt("liczba n")
+parseInt(n)
+if (isNaN(n) || n <= 0) {
+    document.write("złaaa liczbaaa");}
+else {
+    for (let i = 1; i <= n; i++) {
+ document.write(i*i + "<br>")
+    }
+
+}
+
+
+</Script>
+</body>
+</html>
