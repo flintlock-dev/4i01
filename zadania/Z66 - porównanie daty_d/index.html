@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 66</title>
+</head>
+<body>
+<h1>Zadanie 66</h1>
+<h2>Autor: Michał Knurowski</h2>
+<hr>
+
+<p>
+  Napisz program, który dla dat o postaci dzien1, miesiac1, rok1 oraz dzien2, miesiac2, rok2 określi, która z nich jest wcześniejsza. Program powinien przyjmować dane z formularza, weryfikować ich poprawność (np. czy dzień i miesiąc tworzą istniejącą datę) i wyświetlać obie daty oraz wynik porównania w czytelny sposób.
+</p>
+
+<form id="formularz">
+  <fieldset>
+    <legend><b>Data 1</b></legend>
+    Dzień: <input type="number" id="d1" min="1" max="31" required>
+    Miesiąc: <input type="number" id="m1" min="1" max="12" required>
+    Rok: <input type="number" id="r1" min="1" required>
+  </fieldset>
+
+  <fieldset>
+    <legend><b>Data 2</b></legend>
+    Dzień: <input type="number" id="d2" min="1" max="31" required>
+    Miesiąc: <input type="number" id="m2" min="1" max="12" required>
+    Rok: <input type="number" id="r2" min="1" required>
+  </fieldset>
+
+  <br>
+  <input type="submit" value="Porównaj daty">
+</form>
+
+<section id="wynik"></section>
+
+<script>
+  const formularz = document.getElementById('formularz');
+  const wynik = document.getElementById('wynik');
+
+  formularz.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const d1 = parseInt(document.getElementById('d1').value);
+    const m1 = parseInt(document.getElementById('m1').value);
+    const r1 = parseInt(document.getElementById('r1').value);
+    const d2 = parseInt(document.getElementById('d2').value);
+    const m2 = parseInt(document.getElementById('m2').value);
+    const r2 = parseInt(document.getElementById('r2').value);
+
+    function poprawnaData(d, m, r) {
+      const data = new Date(r, m - 1, d);
+      return data.getFullYear() === r && data.getMonth() === (m - 1) && data.getDate() === d;
+    }
+
+    if (!poprawnaData(d1, m1, r1)) {
+      wynik.innerHTML = `<p class="blad">Pierwsza data (${d1}-${m1}-${r1}) jest niepoprawna!</p>`;
+      return;
+    }
+    if (!poprawnaData(d2, m2, r2)) {
+      wynik.innerHTML = `<p class="blad">Druga data (${d2}-${m2}-${r2}) jest niepoprawna!</p>`;
+      return;
+    }
+    const data1 = new Date(r1, m1 - 1, d1);
+    const data2 = new Date(r2, m2 - 1, d2);
+
+    wynik.innerHTML = `
+        <div class="wynik">
+          <p>Data 1: <b>${d1}-${m1}-${r1}</b></p>
+          <p>Data 2: <b>${d2}-${m2}-${r2}</b></p>
+      `;
+
+    if (data1.getTime() < data2.getTime()) {
+      wynik.innerHTML = `<p><b>Data 1 jest wcześniejsza.</b></p></div>`;
+    } else if (data1.getTime() > data2.getTime()) {
+      wynik.innerHTML = `<p><b>Data 2 jest wcześniejsza.</b></p></div>`;
+    } else {
+      wynik.innerHTML = `<p><b>Obie daty są takie same.</b></p></div>`;
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Z30</title>
+</head>
+<body>
+<h1>Zadanie 30</h1>
+<h2>Autor: <b>Michał Knurowski</b></h2>
+<p>Napisz program, który:
+  dla liczb całkowitych A i B sprawdza czy B nie jest równe 0 i tylko w tym wypadku wykonuje dzielenie. Program powinien sprawdzić również, czy podana liczba nie jest rzeczywista.
+</p>
+<section id="wynik"></section>
+</body>
+<script>
+  const wynik = document.querySelector("#wynik");
+  let A = parseInt(prompt("Podaj A"));
+  let B = parseInt(prompt("Podaj B"));
+  if (B == 0) {
+    wynik.innerHTML = ` Nie można dzielić przez 0 `;
+  }
+  else {
+    wynik.innerHTML = ` ${A} podzielone przez ${B} wynosi ${A / B}`
+  }
+
+</script>
+</html>

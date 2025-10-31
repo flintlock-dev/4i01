@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo z60</title>
+</head>
+<body>
+<h1>Zadanie 60</h1>
+<h2>Autor: <b>Michał Knurowski</b></h2>
+<p>Napisz program, który dla podanej liczby całkowitej z przedziału od 1 do 7 wypisuje jaki to dzień tygodnia. Zakładamy, że 1 to poniedziałek. W przypadku liczby z poza zakresu należy wyświetlić informację o błędzie.</p>
+<section id="wynik"></section>
+</body>
+<script>
+  const wynik = document.querySelector('#wynik');
+ let liczba = prompt("podaj liczbe dnia tygodnia");
+ let dzien = parseInt(liczba);
+ switch(dzien) {
+   case 1: wynik.innerHTML = ` ${dzien} : Poniedziałek`; break
+   case 2: wynik.innerHTML = ` ${dzien} : Wtorek`; break
+   case 3: wynik.innerHTML = ` ${dzien} : Środa`; break
+   case 4: wynik.innerHTML = ` ${dzien} : Czwartek`; break
+   case 5: wynik.innerHTML = ` ${dzien} : Piątek`; break
+   case 6: wynik.innerHTML = ` ${dzien} : Sobota`; break
+   case 7: wynik.innerHTML = ` ${dzien} : Nidziela :p`; break
+   default: wynik.innerHTML = ` Ni ma takiego dnia`;
+
+ }
+</script>
+</html>

@@ -20,18 +20,40 @@
 <section id="wynik"></section>
 
 <script>
-  let liczbaa = parseInt(prompt("Podaj A:"));
-  let liczbab = parseInt(prompt("Podaj B:"));
-  let liczbac = parseInt(prompt("Podaj C:"));
   let wynik = document.getElementById("wynik");
-  let delta = (liczbab * liczbab) - 4 * liczbaa * liczbac;
-  let pierwiastek = Math.sqrt(delta);
-  let x1 = (liczbab * -1 + pierwiastek) / (liczbaa  * 2);
-  let x2 = (liczbab * -1 - pierwiastek) / (liczbaa  * 2);
-  document.write(` A = ${liczbaa} <br> B = ${liczbab} <br> C = ${liczbac} <br>
-  Postać równania f(x) = ${liczbaa}*x² + ${liczbab}*x + ${liczbac} <br> delta = ${delta} <br> pierwiastek z delty = ${pierwiastek} <br>   X1 = ${x1} X2 = ${x2}`);
+  let A = parseInt(prompt("Podaj A:"));
+  let B = parseInt(prompt("Podaj B:"));
+  let C = parseInt(prompt("Podaj C:"));
 
+  if (A === 0) {
+    if (B === 0) {
+      if (C === 0) {
+        wynik.innerHTML = "Równanie tożsamościowe (nieskończenie wiele rozwiązań).";
+      } else {
+        wynik.innerHTML = "Równanie sprzeczne (brak rozwiązań).";
+      }
+    } else {
+      let x = -C / B;
+      wynik.innerHTML = `Równanie liniowe. Jedno rozwiązanie: x = ${x.toFixed(2)}.`;
+    }
+  }
+  else {
+    let delta = B * B - 4 * A * C;
+
+    if (delta < 0) {
+      wynik.innerHTML = "Brak rozwiązań rzeczywistych (delta < 0).";
+    }
+    else if (delta === 0) {
+      let x0 = -B / (2 * A);
+      wynik.innerHTML = `Jedno rozwiązanie: x₀ = ${x0.toFixed(2)}.`;
+    }
+    else {
+      let sqrtDelta = Math.sqrt(delta);
+      let x1 = (-B - sqrtDelta) / (2 * A);
+      let x2 = (-B + sqrtDelta) / (2 * A);
+      wynik.innerHTML = `Dwa rozwiązania: x₁ = ${x1.toFixed(2)}, x₂ = ${x2.toFixed(2)}.`;
+    }
+  }
 </script>
-
 </body>
 </html>

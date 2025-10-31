@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie — Położenie punktu względem prostokąta</title>
+</head>
+<body>
+<h1>Zadanie — Położenie punktu względem prostokąta</h1>
+<h2>Autor: Michał Knurowski</h2>
+<hr>
+
+<p>
+  Program określa położenie punktu o współrzędnych (x, y) względem prostokąta
+  wyznaczonego przez proste X=A, X=B, Y=C, Y=D (gdzie A&lt;B i C&lt;D).
+</p>
+
+<form id="formularz">
+  <fieldset>
+    <legend><b>Punkt (x, y)</b></legend>
+    x: <input type="number" id="x" step="any" required>
+    y: <input type="number" id="y" step="any" required>
+  </fieldset>
+
+  <fieldset>
+    <legend><b>Prostokąt</b></legend>
+    A: <input type="number" id="A" step="any" required>
+    B: <input type="number" id="B" step="any" required><br>
+    C: <input type="number" id="C" step="any" required>
+    D: <input type="number" id="D" step="any" required>
+  </fieldset>
+
+  <input type="submit" value="Sprawdź położenie">
+</form>
+
+<section id="wynik"></section>
+
+<script>
+  const formularz = document.getElementById('formularz');
+  const wynik = document.getElementById('wynik');
+
+  formularz.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const x = parseFloat(document.getElementById('x').value);
+    const y = parseFloat(document.getElementById('y').value);
+    const A = parseFloat(document.getElementById('A').value);
+    const B = parseFloat(document.getElementById('B').value);
+    const C = parseFloat(document.getElementById('C').value);
+    const D = parseFloat(document.getElementById('D').value);
+
+    if ([x, y, A, B, C, D].some(isNaN)) {
+      wynik.innerHTML = `<p class="blad">Błąd: wszystkie wartości muszą być liczbami!</p>`;
+      return;
+    }
+
+    if (A >= B || C >= D) {
+      wynik.innerHTML = `<p class="blad">Błąd: prostokąt niepoprawny (A musi być < B i C musi być < D).</p>`;
+      return;
+    }
+
+    let opis = "";
+
+    if (x > A && x < B && y > C && y < D) {
+      opis = "Punkt leży <b>wewnątrz</b> prostokąta.";
+    }
+    else if (
+            ((x === A || x === B) && y >= C && y <= D) ||
+            ((y === C || y === D) && x >= A && x <= B)
+    ) {
+      opis = "Punkt leży <b>na krawędzi</b> prostokąta.";
+    }
+    else {
+      opis = "Punkt leży <b>na zewnątrz</b> prostokąta.";
+    }
+
+    wynik.innerHTML = `
+        <div class="wynik">
+          <p>Punkt: (<b>${x}</b>, <b>${y}</b>)</p>
+          <p>Prostokąt: X = [${A}, ${B}], Y = [${C}, ${D}]</p>
+          <p><b>Wynik:</b> ${opis}</p>
+        </div>
+      `;
+  });
+</script>
+</body>
+</html>
