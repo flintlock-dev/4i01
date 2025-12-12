@@ -2,38 +2,51 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Zadanie 96</title>
+    <title>Z96</title>
 </head>
 <body>
 
-<h1>Z96 - max i indeksy w tab. dwuwymiarowej.</h1>
-<p>Napisz program, który wczytuje liczby całkowite do tablicy o wymiarach n x m, wyświetla tę tablicę, wyświetla maksymalną wartość zapisaną w tablicy oraz wskaźniki elementów zawierających tę maksymalną wartość. Użytkownik podaje n i m oraz wprowadza liczby do komponentu textarea oddzielone przecinkami. Program powinien zweryfikować, czy n i m są liczbami całkowitymi, czy podane wartości są liczbami całkowitymi, oraz czy ich liczba zgadza się z n x m, a następnie wyświetlić tablicę, maksymalną wartość i indeksy elementów o tej wartości.</p>
-<hr>
+<h1>Zadanie 96</h1>
+
+<input id="n" placeholder="Liczba wierszy">
+<input id="m" placeholder="Liczba kolumn">
+<br><br>
+<textarea id="values" placeholder="Wartości oddzielone przecinkami" style="width:300px;height:100px"></textarea>
+<br><br>
+<button onclick="run()">Wyślij</button>
+
+<div id="out"></div>
 
 <script>
-    let wiersze = prompt("Podaj liczbę wierszy:");
-    let kolumny = prompt("Podaj liczbę kolumn:");
-    if (!Number.isInteger(Number(wiersze)) || !Number.isInteger(Number(kolumny))) {
-        document.write("Wiersze i kolumny muszą być liczbami całkowitymi");
-    } else {
-        let ni = prompt("Podaj wartości rozdzielone przecinkami:");
-        let array1 = ni.split(",").map(x => x.trim());
-        let valid = array1.every(x => !isNaN(x) && Number.isInteger(Number(x)));
-        if (!valid) {
-            document.write("Wszystkie wartości muszą być liczbami całkowitymi");
-        } else if (array1.length !== Number(wiersze) * Number(kolumny)) {
-            document.write("Liczba podanych wartości nie zgadza się z n x m");
-        } else {
-            array1 = array1.map(Number);
-            let tab2d = [];
-            for (let i = 0; i < wiersze; i++) {
-                tab2d.push(array1.slice(i * kolumny, (i + 1) * kolumny));
-            }
-            document.write("Tablica 2D:<br><br>");
-            for (let r of tab2d) document.write(r.join(" | ") + "<br>");
-            document.write("<br>Maksymalna wartość: " + Math.max(...array1));
+    function run() {
+        const n = Number(document.getElementById("n").value);
+        const m = Number(document.getElementById("m").value);
+        if (!Number.isInteger(n) || !Number.isInteger(m)) {
+            document.getElementById("out").innerHTML = "n i m muszą być całkowite";
+            return;
         }
+        let arr = document.getElementById("values").value.split(",").map(x=>x.trim());
+        if (!arr.every(x=>x!=="" && !isNaN(x) && Number.isInteger(Number(x)))) {
+            document.getElementById("out").innerHTML = "Wszystkie wartości muszą być całkowite";
+            return;
+        }
+        arr = arr.map(Number);
+        if (arr.length !== n*m) {
+            document.getElementById("out").innerHTML = "Liczba wartości ≠ n×m";
+            return;
+        }
+        let tab = [];
+        for (let i=0;i<n;i++) tab.push(arr.slice(i*m,(i+1)*m));
+        let max = Math.max(...arr);
+        let idx = [];
+        for (let i=0;i<n;i++) for (let j=0;j<m;j++) if (tab[i][j]===max) idx.push([i,j]);
+        let html = "<b>Tablica 2D:</b><br>";
+        for (let r of tab) html += r.join(" | ")+"<br>";
+        html += "<br>Maksymalna wartość: "+max+"<br>Indeksy: ";
+        html += idx.map(p=>"("+p[0]+", "+p[1]+")").join(", ");
+        document.getElementById("out").innerHTML = html;
     }
 </script>
+
 </body>
 </html>
