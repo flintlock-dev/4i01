@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 94</title>
+</head>
+<body>
+
+<h1>Zadanie 94</h1>
+<hr>
+<label> podaj liczby oddzielone przecinkiem </label>
+<textarea id="dane" rows="4" cols="50"></textarea><br><br>
+
+<button onclick="oblicz()">Wyślij</button>
+<div id="wynik"></div>
+<script>
+    function oblicz() {
+        const tekst = document.getElementById("dane").value;
+        const surowe = tekst.split(",");
+        let tab = [];
+        let blad = false;
+
+        for (let x of surowe) {
+            x = x.trim();
+            if (!/^-?\d+$/.test(x)) {
+                blad = true;
+            } else {
+                tab.push(parseInt(x, 10));
+            }
+        }
+
+        const wynik = document.getElementById("wynik");
+        if (blad) {
+            wynik.innerHTML = "Wprowadzono niepoprawne wartości.";
+            return;
+        }
+
+        const max = Math.max(...tab);
+        let indeksy = [];
+        for (let i = 0; i < tab.length; i++) {
+            if (tab[i] === max) indeksy.push(i);
+        }
+
+        wynik.innerHTML =
+            "Tablica: " + tab.join(", ") + "<br>" +
+            "Liczba elementów: " + tab.length + "<br>" +
+            "Maksymalna wartość: " + max + "<br>" +
+            "Indeksy maksymalnej wartości: " + indeksy.join(", ");
+    }
+</script>
+
+</body>
+</html>

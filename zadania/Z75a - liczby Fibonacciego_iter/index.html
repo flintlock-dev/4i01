@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Z75a - liczby Fibonacciego_iter</title>
+</head>
+<body>
+<header>
+  <h1>Z75a - liczby Fibonacciego_iter</h1>
+  <h2>Autor: Michał Knurowski</h2>
+  <p>Napisz program, który dla danej liczby całkowitej n wypisuje wyrazy ciągu Fibonacciego według zależności.</p>
+  <img src="075.png" height="84" width="280"/>
+  <hr>
+</header>
+<script>
+  let n = parseInt(prompt("Podaj liczbę n:"));
+  let a = 0;
+  let b = 1;
+  let c;
+  document.write("Ciąg Fibonacciego dla n = " + n + ":<br>");
+  for (let i = 0; i <= n; i++) {
+    document.write(a + ", ");
+    c = a + b;
+    a = b;
+    b = c;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>T32D</title>
+  <style>
+    .czer {
+      color: red;
+    }
+    .nieb {
+      color: blue;
+    }
+    .ziel {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>T32D</h1>
+  <h2>Autor: Michał Knurowski</h2>
+  <p>Napisz funkcję, która będzie przyjmowała dwa argumenty liczbowe i będzie wypisywała mniejszą z nich w kolorze zielonym, a większą w czerwonym. W przypadku podania liczb jednakowych obie należy wyświetlić w kolorze niebieskim.</p>
+  <hr>
+</header>
+<section id="wynik">
+</section>
+<script>
+  function wm(a,b) {
+    if (a === b) {
+      document.write(`<p class="nieb"> ${a} ${b} </p>`);
+    }
+    else if (a > b) {
+      document.write(`<p class="czer"> ${a}</p> <p class="ziel">${b}</p>`);
+    }
+    else if (a < b) {
+      document.write(`<p class="ziel"> ${a}</p> <p class="czer">${b}</p>`);
+    }
+  }
+
+wm(2,3)
+</script>
+</body>
+</html>

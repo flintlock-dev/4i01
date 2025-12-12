@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>T41 - działanie na tablicach</title>
+</head>
+<body>
+<header>
+    <h1>T41 - działanie na tablicach</h1>
+    <h2>Autor: Michał Knurowski</h2>
+    <p>Napisz program w JavaScript, który:
+        Wczyta od użytkownika ciąg liczb oddzielonych przecinkami,
+        posortuje tablicę,
+        odfiltruje liczby parzyste,
+        obliczy sumę,
+        wyświetli wyniki.
+    </p>
+    <hr>
+</header>
+
+<script>
+    const input = prompt("Podaj liczby po przecinku:");
+
+
+        const liczby = input
+            .split(",")
+            .map(x => Number(x.trim()))
+            .sort((a, b) => a - b);
+    if (liczby.some(isNaN)) {
+        document.write("błędne dane");
+    } else {
+        document.write("Posortowane: " + liczby + "<br>");
+
+        const parzyste = liczby.filter(n => n % 2 === 0);
+        document.write("Parzyste: " + parzyste + "<br>");
+
+        const suma = liczby.reduce((acc, val) => acc + val, 0);
+        document.write("Suma: " + suma + "<br>");
+    }
+</script>
+
+</body>
+</html>

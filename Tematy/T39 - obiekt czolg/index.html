@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>T39 - obiekt czolg</title>
+</head>
+<body>
+<header>
+  <h1>T39 - obiekt czolg</h1>
+  <h2>Autor: Michał Knurowski</h2>
+  <hr>
+</header>
+
+<script>
+  function Czolg(nazwa, kolor, ammo) {
+    this.nazwa = nazwa;
+    this.kolor = kolor;
+    parseInt(this.amunicja = ammo);
+    this.info = function() {
+      alert(this.nazwa + ' ' + this.kolor + ' ' + this.amunicja);
+    }
+    this.pomaluj = function() {
+      this.kolor =  prompt("na jaki kolor chcesz pomalować");
+      alert('twój czołg został przemalowany na:' + this.kolor);
+    }
+    this.zaladuj = function() {
+      this.amunicja = 40
+      alert('załadowałeś amunicje do czolgu twoja amunicja wynosi teraz' + this.amunicja);
+    }
+    this.strzelaj = function() {
+      if (this.amunicja === 0) {
+        alert('*klik* Brak amunicji załaduj')
+      }
+      else {
+        this.amunicja--;
+        alert(`<b> BOOM </b> wystrzeliłeś pocisk twoja amunicja teraz to` + this.amunicja)
+      }
+    }
+  }
+  let czolg1 = new Czolg('K2 Black Panther', 'czarny', '40');
+
+
+</script>
+<button onclick="czolg1.pomaluj()">przemaluj czołg</button>
+<button onclick="czolg1.zaladuj()">Załaduj amunicje</button>
+<button onclick="czolg1.strzelaj()">STRZELAJ</button>
+<button onclick="czolg1.info()">info o czołgu</button>
+</body>
+</html>

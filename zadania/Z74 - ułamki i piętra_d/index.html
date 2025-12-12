@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Z74 - ułamki i piętra_d</title>
+</head>
+<body>
+<header>
+  <h1>Z74 - ułamki i piętra_d</h1>
+  <h2>Autor: Michał Knurowski</h2>
+  <p>
+    Napisz program, który dla danej liczby całkowitej N wyświetla ciąg liczb w postaci ułamka zwykłego i dziesiętnego.
+    <br>Przykład dla N=3:
+Piętro 1 > 1/1 - 1.000000
+Piętro 2 > > 1/2 - 0.500000
+Piętro 3 > > > 1/3 - 0.333333
+> > > > Koniec wspinaczki wracamy < < < <
+Piętro 3 > > >
+Piętro 2 > >
+Piętro 1 >
+  </p>
+  <hr>
+</header>
+
+<section id="wynik"></section>
+
+<script>
+  let liczba = prompt("Podaj liczbę całkowitą dodatnią:");
+  let N = parseInt(liczba);
+  let wynik = document.getElementById("wynik");
+
+  if (!isNaN(N) && N > 0) {
+    for (let i = 1; i <= N; i++) {
+      let strzalki = "> ".repeat(i);
+      wynik.innerHTML += `Piętro ${i} ${strzalki}1/${i} - ${(1/i).toFixed(6)}<br>`;
+    }
+    let goraStrzalki = "> ".repeat(N + 1);
+    let dolStrzalki = "< ".repeat(N + 1);
+    wynik.innerHTML += `${goraStrzalki}Koniec wspinaczki wracamy ${dolStrzalki}<br>`;
+    for (let i = N; i >= 1; i--) {
+      let strzalki = "> ".repeat(i);
+      wynik.innerHTML = `Piętro ${i} ${strzalki}<br>`;
+    }
+  } else {
+    wynik.innerHTML = "<b>Podano niepoprawną wartość. Wpisz liczbę całkowitą dodatnią.</b>";
+  }
+</script>
+</body>
+</html>

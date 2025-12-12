@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>T42 - daty i obliczenia</title>
+</head>
+<body>
+
+<h1>T42 - operacje na datach</h1>
+<h2>Autor: Michał Knurowski</h2>
+<hr>
+
+<script>
+    const input = prompt("Podaj datę urodzenia (RRRR-MM-DD):");
+
+    if (!input) {
+        document.write("Nie podano żadnych danych!");
+    } else {
+        const birth = new Date(input);
+
+        if (isNaN(birth.getTime())) {
+            document.write("Podano błędną datę!");
+        } else {
+
+            const dniTygodnia = [
+                "niedzielę", "poniedziałek", "wtorek", "środę", "czwartek", "piątek", "sobotę"
+            ];
+
+            const dzisiaj = new Date();
+
+            let wiek = dzisiaj.getFullYear() - birth.getFullYear();
+
+            const urodzinyWTymRoku = new Date(
+                dzisiaj.getFullYear(),
+                birth.getMonth(),
+                birth.getDate()
+            );
+
+            if (dzisiaj < urodzinyWTymRoku) {
+                wiek--;
+            }
+
+            let najblizszeUrodziny = new Date(
+                dzisiaj.getFullYear(),
+                birth.getMonth(),
+                birth.getDate()
+            );
+
+            if (dzisiaj > najblizszeUrodziny) {
+                najblizszeUrodziny.setFullYear(dzisiaj.getFullYear() + 1);
+            }
+
+            const msNaDzien = 1000 * 60 * 60 * 24;
+
+            const dniDoUrodzin = Math.ceil((najblizszeUrodziny - dzisiaj) / msNaDzien);
+
+            document.write("Twoja data urodzenia: " + input + "<br>");
+            document.write("Urodziłeś/aś się w " + dniTygodnia[birth.getDay()] + "<br>");
+            document.write("Masz " + wiek + " lat<br>");
+            document.write("Do Twoich najbliższych urodzin pozostało: " + dniDoUrodzin + " dni<br>");
+        }
+    }
+</script>
+
+</body>
+</html>

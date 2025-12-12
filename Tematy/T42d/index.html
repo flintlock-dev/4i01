@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>T42d - ile dni do końca roku</title>
+</head>
+<body>
+
+<h1>T42d - ile dni do końca roku</h1>
+<hr>
+
+<script>
+  let today = new Date();
+  let end = new Date(today.getFullYear(), 11, 31);
+  let diff = end - today;
+  let days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+  document.write("Do końca roku pozostało: " + days + " dni.");
+</script>
+
+</body>
+</html>

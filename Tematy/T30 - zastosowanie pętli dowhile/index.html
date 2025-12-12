@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>T30 - zastosowanie pętli do..while</title>
+</head>
+<body>
+<header>
+    <h1>T30 - zastosowanie pętli do..while</h1>
+    <h2>Autor: Michał Knurowski</h2>
+    <hr>
+</header>
+<section id="wynik">
+</section>
+
+<script>
+    let n = parseInt(prompt("Podaj dodatnią liczbę całkowitą n:"));
+    let i = 1;
+    let iloczyn = 1;
+
+    if (isNaN(n) || n <= 0) {
+        document.write("Proszę podać dodatnią liczbę całkowitą.");
+    } else {
+        do {
+            iloczyn *= i;
+            document.write("Iloczyn liczb od 1 do " + i + " wynosi: " + iloczyn + "<br>");
+            i++;
+        } while (i <= n);
+    }
+</script>
+</body>
+</html>

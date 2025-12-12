@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>T32A</title>
+</head>
+<body>
+<header>
+  <h1>T32A</h1>
+  <h2>Autor: Michał Knurowski</h2>
+  <hr>
+</header>
+<section id="wynik">
+</section>
+
+<script>
+  function wbz1(liczba){
+    if (liczba>0)
+      return liczba;
+    else
+      return -1*liczba;
+  }
+
+  function wbz2(liczba) {
+    let wynik = (liczba>0) ? liczba : -1*liczba;
+    return wynik;
+  }
+
+  document.write(wbz1(-182));
+  document.write(wbz2(182));
+
+</script>
+</body>
+</html>

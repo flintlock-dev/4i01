@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Z78 - litery</title>
+</head>
+<body>
+<header>
+  <h1>Z78 - litery</h1>
+  <h2>Autor: Michał Knurowski</h2>
+  <p>Napisz program, który odczytuje dwie wartości będące dużymi literami alfabetu angielskiego i wypisuje litery od pierwszej do drugiej.</p>
+  <hr>
+</header>
+<script>
+  let a = prompt("podaj pierwszy znak (A-Z):");
+  let b = prompt("podaj drugi znak (A-Z):");
+  a = a.toUpperCase();
+  b = b.toUpperCase();
+
+  let kodA = a.charCodeAt(0);
+  let kodB = b.charCodeAt(0);
+
+  for (let i = kodA; i <= kodB; i++) {
+    document.write(String.fromCharCode(i) + " ");
+  }
+</script>
+</body>
+</html>
+
