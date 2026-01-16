@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie 95</title>
+</head>
+<body>
+
+<h1>Z95 - max w tab. dwuwymiarowej.</h1>
+<p>Napisz program, który wczytuje liczby całkowite do tablicy o wymiarach n x m...</p>
+<hr>
+
+<script>
+  let wiersze = prompt("Podaj liczbę wierszy:");
+  let kolumny = prompt("Podaj liczbę kolumn:");
+  if (!Number.isInteger(Number(wiersze)) || !Number.isInteger(Number(kolumny))) {
+    document.write("Wiersze i kolumny muszą być liczbami całkowitymi");
+  } else {
+    let ni = prompt("Podaj wartości rozdzielone przecinkami:");
+    let array1 = ni.split(",").map(x => x.trim());
+    let valid = array1.every(x => !isNaN(x) && Number.isInteger(Number(x)));
+    if (!valid) {
+      document.write("Wszystkie wartości muszą być liczbami całkowitymi");
+    } else if (array1.length !== Number(wiersze) * Number(kolumny)) {
+      document.write("Liczba podanych wartości nie zgadza się z n x m");
+    } else {
+      array1 = array1.map(Number);
+      let tab2d = [];
+      for (let i = 0; i < wiersze; i++) {
+        tab2d.push(array1.slice(i * kolumny, (i + 1) * kolumny));
+      }
+      document.write("Tablica 2D:<br><br>");
+      for (let r of tab2d) document.write(r.join(" | ") + "<br>");
+      document.write("<br>Maksymalna wartość: " + Math.max(...array1));
+    }
+  }
+</script>
+
+</body>
+</html>

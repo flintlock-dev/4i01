@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Zadanie T21b - z wykorzystaniem Continue_d</title>
+</head>
+<body>
+<header>
+  <h1>Zadanie T21b - z wykorzystaniem Continue_d</h1>
+  <h2>Autor: Michał Knurowski</h2>
+  <p>Napisz skrypt, który czyta liczbę całkowitą a z elementu prompt, a następnie wyświetla liczby od 1 do 25 z pominięciem tych, które są podzielne przez wskazaną liczbę.</p>
+  <hr>
+</header>
+<section id="wynik">
+  ...
+</section>
+<Script>
+  let  n = parseInt(prompt("wpisz liczbę całkowitą N"))
+  let i = 1
+  while (i <= 25) {
+    if ((i % n) ==  = 0) {
+      i++
+    }
+    else {
+      document.write(`<p>${i} </p>`)
+      i++
+    }
+  }
+</Script>
+</body>
+</html>

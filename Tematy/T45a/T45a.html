@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>T45a - kolorowe obramowanie obrazu</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<header>
+  <h1>T45a - kolorowe obramowanie obrazu</h1>
+  <h2>Autor: Michał Knurowski</h2>
+</header>
+<hr>
+<section>
+<img src="img/img.png" alt="T45a obramowanie obrazu" id="obrazek"/>
+  <div>
+    <label for="kolor"> Wybierz kolor ramki</label>
+    <input type="color" id="kolor" value="#000000">
+  </div>
+  <div>
+    <label for="grubosc">Grubość ramki 1 - 30</label>
+    <input type="range" id="grubosc" min="1" max="30" value="3">
+  </div>
+  <button>Narysuj ramke</button>
+</section>
+<script src="main.js"></script>
+</body>
+</html>

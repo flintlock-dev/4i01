@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title> Z80 - piramida</title>
+</head>
+<body>
+<header>
+  <h1> Z80 - piramida</h1>
+  <h2>Autor: Michał Knurowski</h2>
+  <p>Napisz program, który dla podanej liczby całkowitej A wyświetla piramidę znaków | o ilości wierszy równej A (maksymalna dopuszczalna wartość A = 50).</p>
+  <hr>
+</header>
+<script>
+  let a = parseInt(prompt("Podaj liczbę do 50:"));
+
+  if (a <= 50) {
+    for (let i = 1; i <= a; i++) {
+      document.write("<br>");
+      for (let j = 1; j <= i; j++) {
+        document.write("X");
+      }
+    }
+  } else {
+    document.write("Liczba jest powyżej 50 albo jej nie podano.");
+  }
+</script>
+</body>
+</html>
+

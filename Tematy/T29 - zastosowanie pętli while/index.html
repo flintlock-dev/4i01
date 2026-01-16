@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>T29 - zastosowanie pętli while</title>
+</head>
+<body>
+<header>
+    <h1>T29 - zastosowanie pętli while</h1>
+    <h2>Autor: Michał Knurowski</h2>
+    <hr>
+</header>
+<section id="wynik">
+    ...
+</section>
+<Script>
+    let  n = parseInt(prompt("wpisz liczbę całkowitą N"))
+    let i = 1
+    let Suma = 0
+    if (isNaN(n) || n < 0) {
+        document.write('Proszę podać dodatnią liczbę całkowitą.');
+    }
+    else {
+        while (i <= n) {
+            Suma = Suma + i
+            i++
+
+        }
+        document.write("Suma liczb od 1 do " + (i - 1) + " wynosi: " + Suma  + "<br>");
+    }
+
+</Script>
+</body>
+</html>

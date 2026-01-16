@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Z93 - max w tablicy jednowymiar.</title>
+</head>
+<body>
+
+<h1>Z93 - max w tablicy jednowymiar.</h1>
+<h2>Autor: Michał Knurowski</h2>
+<hr>
+
+<script>
+  let ni = prompt("Podaj podaj wartosci podzielone średnikiem:");
+  let array1 = ni.split(";");
+  array1 = array1.map(x => parseInt(x, 10));
+  if (isNaN(array1.length)) {
+    document.write("n musi być liczba.");
+  } else if (array1.length >= 100) {
+    document.write("musi być mniejsze niż 100.");
+  } else {
+   document.write(`Wprowadzone wartości: ${array1} <br> tablica jednowymiarowa: ${array1.length} elementów <br> Maksymalna wartość ${Math.max(...array1)}`);
+  }
+</script>
+</body>
+</html>

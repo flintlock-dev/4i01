@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>T42b - wyświetlenie daty</title>
+</head>
+<body>
+<h1>T42b - wyświetlenie daty</h1>
+<hr>
+<script>
+  let data = prompt("Podaj datę urodzenia (RRRR-MM-DD):");
+
+  let ur = new Date(data);
+  let now = new Date();
+
+  if (isNaN(ur.getTime())) {
+    document.write("Błędne dane!");
+  } else {
+    let wiek = now.getFullYear() - ur.getFullYear();
+    let mNow = now.getMonth();
+    let dNow = now.getDate();
+    let mUr = ur.getMonth();
+    let dUr = ur.getDate();
+    if (mNow < mUr || (mNow === mUr && dNow < dUr)) {
+      wiek--;
+    }
+    document.write("Masz " + wiek + " lat.");
+  }
+</script>
+</body>
+</html>

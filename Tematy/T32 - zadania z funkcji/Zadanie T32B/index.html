@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>T32B</title>
+</head>
+<body>
+<header>
+  <h1>T32B</h1>
+  <h2>Autor: Michał Knurowski</h2>
+  <hr>
+</header>
+<section id="wynik">
+</section>
+
+<script>
+  function dopotegi(x,y) {
+ let wynik = 1
+ for ( let i = 0; i<y; i++) {
+   wynik = wynik * x;
+
+ }
+ document.write(`x = ${x}<br> y = ${y}<br>${x}<sup>${y}</sup>=${wynik}<br> `);
+ return wynik;
+  }
+dopotegi(5,3)
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Z96</title>
+</head>
+<body>
+
+<h1>Zadanie 96</h1>
+
+<input id="n" placeholder="Liczba wierszy">
+<input id="m" placeholder="Liczba kolumn">
+<br><br>
+<textarea id="values" placeholder="Wartości oddzielone przecinkami" style="width:300px;height:100px"></textarea>
+<br><br>
+<button onclick="run()">Wyślij</button>
+
+<div id="out"></div>
+
+<script>
+    function run() {
+        const n = Number(document.getElementById("n").value);
+        const m = Number(document.getElementById("m").value);
+        if (!Number.isInteger(n) || !Number.isInteger(m)) {
+            document.getElementById("out").innerHTML = "n i m muszą być całkowite";
+            return;
+        }
+        let arr = document.getElementById("values").value.split(",").map(x=>x.trim());
+        if (!arr.every(x=>x!=="" && !isNaN(x) && Number.isInteger(Number(x)))) {
+            document.getElementById("out").innerHTML = "Wszystkie wartości muszą być całkowite";
+            return;
+        }
+        arr = arr.map(Number);
+        if (arr.length !== n*m) {
+            document.getElementById("out").innerHTML = "Liczba wartości ≠ n×m";
+            return;
+        }
+        let tab = [];
+        for (let i=0;i<n;i++) tab.push(arr.slice(i*m,(i+1)*m));
+        let max = Math.max(...arr);
+        let idx = [];
+        for (let i=0;i<n;i++) for (let j=0;j<m;j++) if (tab[i][j]===max) idx.push([i,j]);
+        let html = "<b>Tablica 2D:</b><br>";
+        for (let r of tab) html += r.join(" | ")+"<br>";
+        html += "<br>Maksymalna wartość: "+max+"<br>Indeksy: ";
+        html += idx.map(p=>"("+p[0]+", "+p[1]+")").join(", ");
+        document.getElementById("out").innerHTML = html;
+    }
+</script>
+
+</body>
+</html>

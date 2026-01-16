@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>T32E</title>
+</head>
+<body>
+<header>
+  <h1>T32E</h1>
+  <h2>Autor: Michał Knurowski</h2>
+  <p>Napisz funkcję, która dla dwóch liczb całkowitych wyświetla ich wspólny dzielnik (przypomnij sobie algorytm Euklidesa).</p>
+  <hr>
+</header>
+<section id="wynik">
+</section>
+<script>
+  function NWD(a,b) {
+  while (a !==b) {
+    if(a>b) {
+      a = a - b
+      } else {
+      b = b - a
+      }
+    }
+    return a;
+  }
+  document.write(NWD(113,7));
+</script>
+</body>
+</html>
