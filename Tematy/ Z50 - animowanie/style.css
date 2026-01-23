@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffe6f0, #e6f7ff);
+    font-family: "Comic Sans MS", "Segoe UI", sans-serif;
+}
+
+h1 {
+    color: #ff69b4;
+    text-shadow: 2px 2px 0 #fff;
+    margin-bottom: 20px;
+}
+
+#kicia {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+    transition: transform 0.3s ease;
+}
+
+#kicia:hover {
+    transform: scale(1.05) rotate(1deg);
+}
+
+#kote {
+    width: 400px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+}
+
+

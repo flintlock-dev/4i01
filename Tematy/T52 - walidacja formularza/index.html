@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>T52 - walidacja formularza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>T52 - walidacja formularza</h1>
+<h2>Autor: Michał Knurowski 4i</h2>
+
+<section>
+<form id="form">
+
+    <label for="name">Imię i nazwisko</label><br>
+    <input type="text" id="name"><br>
+
+    <label for="data">Data urodzenia</label><br>
+    <input type="date" id="data"><br>
+
+    <label>
+        <input type="checkbox" id="regulamin">
+        Akceptacja regulaminu
+    </label><br>
+
+    <label>
+        <input type="checkbox" id="newsletter">
+        Zgoda na otrzymywanie newslettera
+    </label><br><br>
+
+    <button type="submit">Zarejestruj</button>
+
+</form>
+    </section>
+
+
+
+<section id="walidacja"></section>
+
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>T46a - tryb ciemny i jasny</title>
+</head>
+<body>
+<header>
+    <h1>T46a - tryb ciemny i jasny</h1>
+    <h2>Autor: Michał Knurowski</h2>
+</header>
+<script>
+    let darkmode = false;
+    window.onclick = () => {
+        console.log('darkmode');
+        if (!darkmode) {
+            document.body.style.backgroundColor = '#000000';
+            document.body.style.color = 'white';
+            darkmode = true;
+        }
+        else {
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+            darkmode = false;
+        }
+    }
+</script>
+    <p> Personalizacja stron internetowych. Pozwól użytkownikom na zmianę motywu wyświetlonej strony internetowej. Dostępne powinny być tryby jasny i ciemny.
+
+        W prostym dokumencie HTML zdefiniuj zmienną boolowską, która będzie używana do przełączania trybów.
+        Użyj window.onclick do zdefiniowania funkcji, która po wywołaniu wyświetli komunikat w konsoli. Możesz wykorzystać zmienną boolowską.
+        W funkcji dodaj warunek sprawdzający, jaka jest wartość zmiennej darkMode: true lub false.
+        Jeżeli jest to false, należy uaktualnić styl strony w taki sposób, aby tło miało kolor czarny, a czcionka biały.
+        Dodaj blok else, w którym kolor tła zmieni się na biały, a czcionki na czarny.Ponadto kod powinien odpowiednio uaktualnić wartość zmiennej darkMode.</p>
+</body>
+</html>
