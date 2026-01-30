@@ -1,0 +1,44 @@
+li.wybor {
+    background: darkred;
+    color: #FFF;
+}
+#menu {
+    width: 150px;
+    padding: 2px;
+}
+ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#upup {
+    background-color: #4eb2d6;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px blue;
+}
+
+body {
+    background-color: #46a1c3;
+    color: white;
+    text-shadow: 1px 1px blue;
+
+}
+
+hr {
+    display: block;
+    height: 3px;
+    color: black;
+    background-color: black;
+    border: black solid;
+}
+
+#meniXD {
+    background-color: #4eb2d6;
+    padding: 5px;
+    box-shadow: 3px 5px #4295b3;
+}

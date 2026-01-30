@@ -1,0 +1,107 @@
+body {
+    margin: 10px auto;
+    width: 600px;
+}
+.blok {
+    width: 600px;
+    border-bottom: solid 1px #b0b0b0;
+    text-align: center;
+}
+.blok h3 {
+    background: #c6d2f2;
+    padding: 8px 15px;
+    margin: 0;
+    font: bold 12pt Arial, sans-serif;
+    border: solid 1px #b0b0b0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #989898;
+    cursor: pointer;
+}
+.blok h3:hover {
+    background-color: #88a3e8;
+}
+.blok h3.aktywny {
+    background-color: #f40a0a;
+    text-align: center;
+    border: 2px #ca0909 solid;
+}
+.blok p {
+    background: #e1e6f4;
+    margin: 0;
+    padding: 10px 15px 20px;
+    border-left: solid 1px #aeaeae;
+    border-right: solid 1px #aeaeae;
+    font:10pt Arial, sans-serif;
+    display: none;
+}
+
+li.wybor {
+    background: darkred;
+    color: #FFF;
+}
+#menu {
+    width: 150px;
+    padding: 2px;
+}
+ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#upup {
+    background-color: #4eb2d6;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px blue;
+}
+
+body {
+    background-color: #d3d3b7;
+    color: #000000;
+
+
+}
+
+hr {
+    display: block;
+    height: 3px;
+    color: black;
+    background-color: black;
+    border: black solid;
+}
+
+/* TŁO – różowy gradient */
+body {
+    margin: 10px auto;
+    width: 600px;
+    background: radial-gradient(circle at top,
+    #ff9ad5 0%,
+    #ff4fa3 30%,
+    #b5179e 60%,
+    #560bad 100%);
+    background-attachment: fixed;
+    color: #000;
+}
+
+/* PULSUJĄCA WINIETA NA CAŁY EKRAN */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle,
+    rgba(0,0,0,0) 40%,
+    rgba(0,0,0,0.55) 100%);
+    animation: winietaPulse 4s ease-in-out infinite;
+    z-index: 9999;
+}
+
+@keyframes winietaPulse {
+    0%   { opacity: 0.4; }
+    50%  { opacity: 0.75; }
+    100% { opacity: 0.4; }
+}

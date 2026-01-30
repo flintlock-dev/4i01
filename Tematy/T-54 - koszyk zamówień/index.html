@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>T-54 - koszyk zamówień</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>T-54 - koszyk zamówień</h1>
+<h2>Autor: Michał Knurowski 4i</h2>
+<hr>
+<section>
+    <label for="select">Wybierz obraz</label>
+    <select id="select">
+        <option value="1">1.jpg</option>
+        <option value="2">2.jpg</option>
+        <option value="3">3.jpg</option>
+        <option value="4">4.jpg</option>
+        <option value="5">5.jpg</option>
+        <option value="6">6.jpg</option>
+        <option value="7">7.jpg</option>
+        <option value="8">8.jpg</option>
+        <option value="9">9.jpg</option>
+        <option value="10">10.jpg</option>
+    </select>
+    <label for="ilosc">Ile chcesz kopi</label>
+    <input type="number" id="ilosc" min="1" value="1">
+
+    <label for="papier">Jaki chcesz mieć papier</label>
+    <select id="papier">
+        <option value="1.5">papier błyszczący</option>
+        <option value="2">papier matowy</option>
+    </select>
+    <button id="dodaj">Dodaj do koszyka</button>
+</section>
+<hr>
+<section id="koszyk"></section>
+<h3 id="suma">Suma: 0 zł</h3>
+<script src="main.js"></script>
+</body>
+</html>

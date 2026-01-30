@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>55. Biblioteka jQuery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>55. Biblioteka jQuery</h1>
+<h2>Autor: Michał Knurowski 4i</h2>
+<hr>
+<section>
+<button>Wciśnij ;3</button>
+<script>
+
+    $("button").click(function(){
+        $(this).text("komunikat");
+        alert("Hiiiiiii :3");
+        $("section").append("<p>To jest komunikat z jQuerry</p>");
+    });
+</script>
+    </section>
+</body>
+</html>

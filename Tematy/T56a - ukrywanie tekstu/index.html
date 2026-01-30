@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Rozwijany blok</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="upup">
+  <h1>T56a - ukrywanie tekstu</h1>
+  <h2>Autor: Michał Knurowski 4i</h2>
+  <hr>
+</section>
+<div class="blok">
+  <h3>Język HTML</h3>
+  <p>Podstawowym elementem języka HTML jest znacznik.
+    Znaczniki są peceniami umieszczonymi w nawiasach ostrych.
+    Informują one zeglądarkę o wyglądzie otwieranej strony
+    oraz o struktue tekstu umieszczonego na niej. </p>
+  <h3>Kaskadowe arkusze stylów CSS</h3>
+  <p>Język CSS określa układ gra¿czny dokumentu HTML: parametry
+    czcionki wysokość szerokość obrazków, ich położenie,
+    rodzaj tła itp. Wsstkie polecenia dotyczące formatowania
+    powinny zostać umizczone w oddzielnym pliku (arkuszu) i być
+    powiązane z lmenmi zde¿niowanymi w kodzie HTML.</p>
+  <h3>Systemy zarządnia treścią–CMS</h3>
+  <p>Systemy zarządzania treścią (CMS, ang. Content Management
+    System) to aplikacje iernetowe, które pozwalają na łatwe tworzenie
+    i mody¿kowane oraz roudowę strony internetowej. Systemy CMS generują
+    przy wykozysaniu odpiednich szablonów gotowe strony internetowe.</p>
+  <h3>avaScript</h3>
+  <p>JavaScript odgrywa coraz większą rolę w projektowaniu
+  interaktywnych stron intnetowych. Jego możliwości
+  są bardzo duże, od prostej manipulacji danymi, przez
+  dynamiczne modelowanie struktury strony, obsługę rozszerzeńmultimedialnych, aż po tworzenie odrębnych aplikacji.</p><h3>jQuery</h3>
+  <p>Biblioteka jQuery to framework zawierający różnorodne
+    nkcje, za pomocą których można realizować często spotykane
+    dania (na przykład animacje, obsługę zdarzeń, tworzenie eektów
+    stronie internetowej). Jej głównymi zaletami są: łtwość uycia,
+    ezależność od przeglądarki i małe rozmiary otrzymanego kdu.</p>
+  </div>
+<script>
+  $(function() {
+    $(".blok h3").eq(0).addClass("aktywny");
+    $(".blok p").eq(0).show();
+    $(".blok h3").click(function() {
+      $(this).next("p").slideToggle("slow")
+              .siblings("p:visible").slideUp("slow");
+      $(this).toggleClass("aktywny");
+      $(this).siblings("h3").removeClass("aktywny");
+    });
+  });
+</script>
+</body>
+</html>

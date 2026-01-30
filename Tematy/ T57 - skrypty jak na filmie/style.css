@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+    align-content: center;
+    margin: auto;
+    align-items: center;
+}
+
+#box {
+    text-align: center;
+    color: black;
+    background-color: orange;
+    margin: auto;
+    width: 10%;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.thing {
+    text-align: center;
+    color: black;
+    background-color: greenyellow;
+    margin: auto;
+    width: 10%;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    border-radius: 200px 0 0;
+}
+
+button {
+    color: white;
+    border: #292929 solid;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#upup {
+    background-color: #4eb2d6;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px blue;
+}
